@@ -125,6 +125,8 @@ public class Main {
         sheet.setColumnWidth((short) 4, (short) 3000);
         sheet.setColumnWidth((short) 5, (short) 5000);
         sheet.setColumnWidth((short) 6, (short) 10000);
+        sheet.setColumnWidth((short) 7, (short) 10000);
+        sheet.setColumnWidth((short) 8, (short) 10000);
 
         sheet.addMergedRegion(new CellRangeAddress(0, 0, 0, 1));
         sheet.addMergedRegion(new CellRangeAddress(0, 0, 2, 6));
@@ -157,6 +159,10 @@ public class Main {
             cell.setCellStyle(cellStyle1);
             cell = row.createCell(6);
             cell.setCellStyle(cellStyle1);
+            cell = row.createCell(7);
+            cell.setCellStyle(cellStyle1);
+            cell = row.createCell(8);
+            cell.setCellStyle(cellStyle1);
 
             row = sheet.createRow((short) k++);
             cell = row.createCell(0);
@@ -177,6 +183,10 @@ public class Main {
             cell = row.createCell(5);
             cell.setCellStyle(cellStyle1);
             cell = row.createCell(6);
+            cell.setCellStyle(cellStyle1);
+            cell = row.createCell(7);
+            cell.setCellStyle(cellStyle1);
+            cell = row.createCell(8);
             cell.setCellStyle(cellStyle1);
 
             row = sheet.createRow((short) k++);
@@ -207,6 +217,14 @@ public class Main {
 
             cell = row.createCell(6);
             cell.setCellValue("Comment");
+            cell.setCellStyle(headerStyle);
+
+            cell = row.createCell(7);
+            cell.setCellValue("characterSetName");
+            cell.setCellStyle(headerStyle);
+
+            cell = row.createCell(8);
+            cell.setCellValue("collationName");
             cell.setCellStyle(headerStyle);
 
             List<TableStruct> structList = name.getStruct();
@@ -246,8 +264,17 @@ public class Main {
                 cell = row.createCell(x++);
                 cell.setCellValue(struct.getComment().replace("\\n", " ").trim());
                 cell.setCellStyle(cellStyle1);
+
+                cell = row.createCell(x++);
+                cell.setCellValue(struct.getCharacterSetName().trim());
+                cell.setCellStyle(cellStyle0);
+
+                cell = row.createCell(x++);
+                cell.setCellValue(struct.getCollationName().trim());
+                cell.setCellStyle(cellStyle0);
             }
-            
+
+
             // 테이블간 빈 줄 삽입
             row = sheet.createRow((short) k++);
             cell = row.createCell(1);
@@ -263,6 +290,8 @@ public class Main {
             cell = row.createCell(4);
             cell = row.createCell(5);
             cell = row.createCell(6);
+            cell = row.createCell(7);
+            cell = row.createCell(8);
         }
 
         FileOutputStream fos = null;

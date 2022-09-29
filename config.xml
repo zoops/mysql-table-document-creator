@@ -5,11 +5,11 @@
 
 <configuration>
     <properties>
-        <property name="hostname" value="localhost" />
+        <property name="hostname" value="49.50.172.100" />
         <property name="portnumber" value="3306" />
-        <property name="database" value="데이터베이스이름" />
-        <property name="username" value="사용자계정명" />
-        <property name="password" value="계정 비밀번호" />
+        <property name="database" value="hankyungmes" />
+        <property name="username" value="dbuser1" />
+        <property name="password" value="HKMES++UR2021!@#$" />
     </properties>
 
     <!-- MySQL 접속 정보를 지정한다. -->

@@ -32,7 +32,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			COLUMN_KEY AS `key`,
 			EXTRA AS `extra`,
 			COLUMN_DEFAULT `defaultValue`,
-			COLUMN_COMMENT AS `comment`
+			COLUMN_COMMENT AS `comment`,
+			CHARACTER_SET_NAME AS `characterSetName`,
+			COLLATION_NAME AS `collationName`
 		FROM
 			INFORMATION_SCHEMA.COLUMNS
 		WHERE

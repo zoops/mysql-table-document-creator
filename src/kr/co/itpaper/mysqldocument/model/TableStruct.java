@@ -7,8 +7,14 @@ public class TableStruct {
 	private String fieldName;
 	// 데이터 타입
 	private String dataType;
+
 	// 널 허용 여부
 	private String isNull;
+
+	private String characterSetName;
+
+	private String collationName;
+
 	// 제약조건
 	private String key;
 	// 기타 속성
@@ -17,6 +23,29 @@ public class TableStruct {
 	private String defaultValue;
 	// 주석
 	private String comment;
+
+	public String getCharacterSetName() {
+		if (characterSetName == null) {
+			characterSetName = "";
+		}
+
+		return characterSetName;
+	}
+
+	public void setCharacterSetName(String characterSetName) {
+		this.characterSetName = characterSetName;
+	}
+
+	public String getCollationName() {
+		if (collationName == null) {
+			collationName = "";
+		}
+		return collationName;
+	}
+
+	public void setCollationName(String collationName) {
+		this.collationName = collationName;
+	}
 
 	public int getId() {
 		return id;
